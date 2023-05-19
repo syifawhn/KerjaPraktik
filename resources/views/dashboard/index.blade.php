@@ -1,13 +1,6 @@
 @extends('layout/master')
 @section('content')
-    <div class="container px-4">
-        <div class="row gx-5">
-            <div class="col">
-                <div class="p-3 border bg-light">Event</div>
-            </div>
-        </div>
-    </div>
-    <table class="table">
+    <table id="example1" class="table table-bordered table-striped">
         <thead>
             <tr>
                 <th scope="col">No</th>

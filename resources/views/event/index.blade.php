@@ -3,16 +3,13 @@
 @section('content')
     <div class="row">
         <div class="col-12">
-            <!-- ---------------------
-                                                                                                                                                                                                                                            start Zero Configuration
-                                                                                                                                                                                                                                        ---------------- -->
             <div class="card">
                 <div class="border-bottom title-part-padding">
-                    <h4 class="card-title mb-2"><a href="/barang/create" class="btn btn-primary">Simpan</a></h4>
+                    <h4 class="card-title mb-2"><a href="/event/create" class="buttom right btn btn-primary">Simpan</a></h4>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
-                        <table id="zero_config" class="table table-striped table-bordered text-nowrap">
+                        <table id="example1" class="table table-bordered table-striped">
                             <thead>
                                 <!-- start row -->
                                 <tr>
@@ -29,8 +26,8 @@
                                 </tr>
                                 <!-- end row -->
                             </thead>
-                            <tbody>
-                                @foreach ($event as $item)
+                            {{-- <tbody>
+                                @foreach ($event as $event)
                                     <tr>
                                         <td>{{ $item->penyelenggara }}</td>
                                         <td>{{ $item->nama_event }}</td>
@@ -44,8 +41,8 @@
                                         <td>{{ $item->sisa }}</td>
                                         <td>
 
-                                            <a href="/event/{{ $item->id }}/edit" class="btn btn-warning">Edit</a>
-                                            <form action="{{ route('event.destroy', ['event' => $item->id]) }}"
+                                            <a href="/event/{{ $event->id }}/edit" class="btn btn-warning">Edit</a>
+                                            <form action="{{ route('event.destroy', ['event' => $event->id]) }}"
                                                 method="POST" class="d-inline">
                                                 @method('delete')
                                                 @csrf
@@ -59,14 +56,14 @@
 
 
                                 <!-- end row -->
-                            </tbody>
+                            </tbody> --}}
                         </table>
                     </div>
                 </div>
             </div>
             <!-- ---------------------
-                                                                                                                                                                                                                                            end Zero Configuration
-                                                                                                                                                                                                                                        ---------------- -->
+                                                                                                                                                                                                                                                                                end Zero Configuration
+                                                                                                                                                                                                                                                                            ---------------- -->
         </div>
     </div>
 @endsection
