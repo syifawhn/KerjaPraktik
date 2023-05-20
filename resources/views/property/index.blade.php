@@ -4,11 +4,12 @@
     <div class="row">
         <div class="col-12">
             <!-- ---------------------
-                                                                                                                                                                                                                                                start Zero Configuration
-                                                                                                                                                                                                                                            ---------------- -->
+                                                                                                                                                                                                                                                            start Zero Configuration
+                                                                                                                                                                                                                                                        ---------------- -->
             <div class="card">
                 <div class="border-bottom title-part-padding">
-                    <h4 class="card-title mb-2"><a href="/event/create" class="btn btn-primary">Simpan</a></h4>
+                    {{-- <h4 class="card-title mb-2"><a href="/event/create" class="btn btn-primary">Add Property</a></h4> --}}
+                    <button type="button" class="btn btn-outline-dark">Add Event</button>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
@@ -22,7 +23,7 @@
                                 </tr>
                                 <!-- end row -->
                             </thead>
-                            <tbody>
+                            {{-- <tbody>
                                 @foreach ($property as $property)
                                     <tr>
                                         <td>{{ $item->nama_property }}</td>
@@ -45,14 +46,14 @@
 
 
                                 <!-- end row -->
-                            </tbody>
+                            </tbody> --}}
                         </table>
                     </div>
                 </div>
             </div>
             <!-- ---------------------
-                                                                                                                                                                                                                                                end Zero Configuration
-                                                                                                                                                                                                                                            ---------------- -->
+                                                                                                                                                                                                                                                            end Zero Configuration
+                                                                                                                                                                                                                                                        ---------------- -->
         </div>
     </div>
 @endsection

@@ -41,9 +41,9 @@
                     </a>
                 </li>
                 <!-- Navbar Search -->
-                <li class="nav-item">
+                {{-- <li class="nav-item">
                     <input type="button" value="Log Out" onclick="logout()">
-                </li>
+                </li> --}}
             </ul>
         </nav>
         <!-- /.navbar -->

@@ -26,6 +26,8 @@ class EventController extends Controller
     public function create()
     {
         //
+        return view('event.add');
+    
     }
 
     /**
@@ -37,6 +39,21 @@ class EventController extends Controller
     public function store(Request $request)
     {
         //
+        $validateData = $request->validate([
+            'penyelenggara' => 'required|max:255',
+            'nama_event' => 'required',
+            'jadwal_event' => 'required',
+            'alamat_event' => 'required',
+            'jadwal_event' => 'required',
+            'property' => 'required',
+            'team' => 'required',
+            'foto_event' => 'required',
+            'harga' => 'required',
+            'dp' => 'required',
+            'sisa' => 'required',
+        ]);
+
+        return redirect('event')->with('succes', 'Data Event Berhasil Disimpan');
     }
 
     /**
@@ -71,6 +88,7 @@ class EventController extends Controller
     public function update(Request $request, cr $cr)
     {
         //
+    
     }
 
     /**
