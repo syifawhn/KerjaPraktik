@@ -4,12 +4,13 @@
     <div class="row">
         <div class="col-12">
             <!-- ---------------------
-                                                                                                                                                                                                                                                            start Zero Configuration
-                                                                                                                                                                                                                                                        ---------------- -->
+                                                                                                                                                                                                                                                                start Zero Configuration
+                                                                                                                                                                                                                                                            ---------------- -->
             <div class="card">
                 <div class="border-bottom title-part-padding">
                     {{-- <h4 class="card-title mb-2"><a href="/event/create" class="btn btn-primary">Add Property</a></h4> --}}
-                    <button type="button" class="btn btn-outline-dark">Add Event</button>
+                    {{-- <button type="button" class="btn btn-outline-dark">Add Event</button> --}}
+                    <a href="/event/create" class="btn btn-primary">Add Property</a>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
@@ -52,8 +53,8 @@
                 </div>
             </div>
             <!-- ---------------------
-                                                                                                                                                                                                                                                            end Zero Configuration
-                                                                                                                                                                                                                                                        ---------------- -->
+                                                                                                                                                                                                                                                                end Zero Configuration
+                                                                                                                                                                                                                                                            ---------------- -->
         </div>
     </div>
 @endsection

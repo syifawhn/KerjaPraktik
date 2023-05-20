@@ -26,6 +26,7 @@ class PropertyController extends Controller
     public function create()
     {
         //
+        return view('propert.add');
     }
 
     /**
@@ -37,6 +38,14 @@ class PropertyController extends Controller
     public function store(Request $request)
     {
         //
+        $validateData = $request->validate([
+            'nama_property' => 'required|max:255',
+            'jumlah_property' => 'required',
+            'foto_property' => 'required',
+            
+        ]);
+
+        return redirect('property')->with('succes', 'Data Property Berhasil Disimpan');
     }
 
     /**
