@@ -1,4 +1,5 @@
 @extends('layout/master')
+@section('title', 'dashboard')
 @section('content')
     <table id="example1" class="table table-bordered table-striped">
         <thead>

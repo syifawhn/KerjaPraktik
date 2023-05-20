@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="{{ asset('plugins/datatables-buttons/css/buttons.bootstrap4.min.css') }}">
     <!-- Theme style -->
     <link rel="stylesheet" href="{{ asset('dist/css/adminlte.min.css') }}">
-</head>
+    <link rel="stylesheet" href="{{ asset('dist/css/app.css') }}" </head>
 
 <body class="hold-transition sidebar-mini">
     <!-- Site wrapper -->
@@ -78,7 +78,7 @@
                         <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="dashboard" class="nav-link">
                                 <i class="nav-icon fas fa-tachometer-alt"></i>
                                 <p>
                                     Dashboard
@@ -86,7 +86,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="event" class="nav-link">
                                 <i class="nav-icon fas fa-copy"></i>
                                 <p>
                                     Event
@@ -96,7 +96,7 @@
 
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="property" class="nav-link">
                                 <i class="nav-icon fas fa-chart-pie"></i>
                                 <p>
                                     Property
@@ -106,7 +106,7 @@
 
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="team" class="nav-link">
                                 <i class="nav-icon far fa-plus-square"></i>
                                 <p>
                                     Team
@@ -116,7 +116,7 @@
 
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="logout" class="nav-link">
                                 <i class="nav-icon far fa-plus-square"></i>
                                 <p>
                                     Logout

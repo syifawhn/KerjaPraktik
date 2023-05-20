@@ -15,7 +15,7 @@ class PropertyController extends Controller
     public function index()
     {
         //
-        return view('property/index');
+        return view('property.index');
     }
 
     /**
@@ -26,7 +26,7 @@ class PropertyController extends Controller
     public function create()
     {
         //
-        return view('propert.add');
+        return view('property.add');
     }
 
     /**

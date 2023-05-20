@@ -15,7 +15,7 @@ class TeamController extends Controller
     public function index()
     {
         //
-        return view('team/index');
+        return view('team.index');
     }
 
     /**
@@ -26,6 +26,7 @@ class TeamController extends Controller
     public function create()
     {
         //
+        return view('team.add');
     }
 
     /**
@@ -37,6 +38,15 @@ class TeamController extends Controller
     public function store(Request $request)
     {
         //
+        $validateData = $request->validate([
+            'nama' => 'required|max:255',
+            'divisi' => 'required',
+            'email' => 'required',
+            'no_handphone' => 'required',
+            'foto_team' => 'required',
+        ]);
+
+        return redirect('team')->with('succes', 'Data Team Berhasil Disimpan');
     }
 
     /**
@@ -59,6 +69,7 @@ class TeamController extends Controller
     public function edit(cr $cr)
     {
         //
+        return view('team.edit');
     }
 
     /**

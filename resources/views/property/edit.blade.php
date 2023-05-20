@@ -11,7 +11,7 @@
 
         </div>
         <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Julah Property</label>
+            <label for="exampleInputEmail1" class="form-label">Jumlah Property</label>
             <input type="text" class="form-control" name="nama_property" id="exampleInputEmail1"
                 aria-describedby="emailHelp" value="{{ old('nama_property', $property->jumlah_property) }}">
 
