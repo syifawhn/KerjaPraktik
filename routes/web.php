@@ -28,9 +28,10 @@ Route::get('/', function () {
 Route::get('dashboard', [DashboardController::class, 'index']);
 Route::get('event', [EventController::class, 'index']);
 Route::get('event/create', [EventController::class, 'create']);
+Route::get('event/store', [EventController::class, 'store']);
 Route::get('property', [PropertyController::class, 'index']);
 Route::get('property/create', [PropertyController::class, 'create']);
 Route::get('team', [TeamController::class, 'index']);
-Route::get('team/create', [TeamController::class, 'create']);
+Route::get('team/add', [TeamController::class, 'create']);
 
 require __DIR__.'/auth.php';
