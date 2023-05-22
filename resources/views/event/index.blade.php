@@ -22,6 +22,7 @@
                                         <th>Jadwal Event</th>
                                         <th>Alamat Event</th>
                                         <th>Status Pembayaran</th>
+                                        <th>Action</th>
                                         {{-- <th>Team</th>
                                         <th>Foto Event</th>
                                         <th>Harga</th>
@@ -66,8 +67,8 @@
                     </div>
                 </div>
                 <!-- ---------------------
-                                                                                                                                                                                                                                                                                                                                            end Zero Configuration
-                                                                                                                                                                                                                                                                                                                                        ---------------- -->
+                                                                                                                                                                                                                                                                                                                                                    end Zero Configuration
+                                                                                                                                                                                                                                                                                                                                                ---------------- -->
             </div>
         </div>
     @endsection
