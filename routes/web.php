@@ -1,10 +1,9 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\EventController;
-use App\Http\Controllers\PropertyController;
+use App\Http\Controllers\DivisiController;
 use App\Http\Controllers\TeamController;
+use Illuminate\Support\Facades\Route;
 
 
 /*
@@ -24,14 +23,25 @@ Route::get('/', function () {
 
 
 
+Route::middleware(['auth'])->group(function () {
+    //dashboard
+    Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard.index');
 
-Route::get('dashboard', [DashboardController::class, 'index']);
-Route::get('event', [EventController::class, 'index']);
-Route::get('event/create', [EventController::class, 'create']);
-Route::get('event/store', [EventController::class, 'store']);
-Route::get('property', [PropertyController::class, 'index']);
-Route::get('property/create', [PropertyController::class, 'create']);
-Route::get('team', [TeamController::class, 'index']);
-Route::get('team/add', [TeamController::class, 'create']);
 
-require __DIR__.'/auth.php';
+
+    //team
+    Route::get('team', [TeamController::class, 'index'])->name('team.index');
+    Route::get('team/create', [TeamController::class, 'create'])->name('team.create');
+    Route::post('sendTeam', [TeamController::class, 'store'])->name('team.store');
+
+
+
+
+    //divisi
+    Route::get('divisi', [DivisiController::class, 'index'])->name('divisi.index');
+    Route::get('divisi/create', [DivisiController::class, 'create'])->name('divisi.create');
+    Route::post('sendDivisi', [DivisiController::class, 'store'])->name('divisi.store');
+});
+
+
+require __DIR__ . '/auth.php';

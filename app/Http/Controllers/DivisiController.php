@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Property;
+use App\Models\Divisi;
 use Illuminate\Http\Request;
 
-class PropertyController extends Controller
+class DivisiController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,6 +15,9 @@ class PropertyController extends Controller
     public function index()
     {
         //
+        return view('divisi/index', [
+            'data' => Divisi::all()
+        ]);
     }
 
     /**
@@ -25,6 +28,7 @@ class PropertyController extends Controller
     public function create()
     {
         //
+        return view('divisi/create');
     }
 
     /**
@@ -36,15 +40,22 @@ class PropertyController extends Controller
     public function store(Request $request)
     {
         //
+        $validatedData = $request->validate([
+            'nama_divisi' => 'required',
+        ]);
+
+        Divisi::create($validatedData);
+
+        return redirect('divisi')->with('success', 'Divisi berhasil ditambahkan');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Property  $property
+     * @param  \App\Models\Divisi  $divisi
      * @return \Illuminate\Http\Response
      */
-    public function show(Property $property)
+    public function show(Divisi $divisi)
     {
         //
     }
@@ -52,10 +63,10 @@ class PropertyController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Property  $property
+     * @param  \App\Models\Divisi  $divisi
      * @return \Illuminate\Http\Response
      */
-    public function edit(Property $property)
+    public function edit(Divisi $divisi)
     {
         //
     }
@@ -64,10 +75,10 @@ class PropertyController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Property  $property
+     * @param  \App\Models\Divisi  $divisi
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Property $property)
+    public function update(Request $request, Divisi $divisi)
     {
         //
     }
@@ -75,10 +86,10 @@ class PropertyController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Property  $property
+     * @param  \App\Models\Divisi  $divisi
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Property $property)
+    public function destroy(Divisi $divisi)
     {
         //
     }

@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\cr;
+use App\Models\Event;
 use Illuminate\Http\Request;
 
 class EventController extends Controller
@@ -15,7 +15,6 @@ class EventController extends Controller
     public function index()
     {
         //
-        return view('event.index');
     }
 
     /**
@@ -26,8 +25,6 @@ class EventController extends Controller
     public function create()
     {
         //
-        return view('event.add');
-    
     }
 
     /**
@@ -39,30 +36,15 @@ class EventController extends Controller
     public function store(Request $request)
     {
         //
-        $validateData = $request->validate([
-            'penyelenggara' => 'required|max:255',
-            'nama_event' => 'required',
-            'jadwal_event' => 'required',
-            'alamat_event' => 'required',
-            'jadwal_event' => 'required',
-            'property' => 'required',
-            'team' => 'required',
-            'foto_event' => 'required',
-            'harga' => 'required',
-            'dp' => 'required',
-            'sisa' => 'required',
-        ]);
-
-        return redirect('event')->with('succes', 'Data Event Berhasil Disimpan');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\cr  $cr
+     * @param  \App\Models\Event  $event
      * @return \Illuminate\Http\Response
      */
-    public function show(cr $cr)
+    public function show(Event $event)
     {
         //
     }
@@ -70,37 +52,34 @@ class EventController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\cr  $cr
+     * @param  \App\Models\Event  $event
      * @return \Illuminate\Http\Response
      */
-    public function edit(cr $cr)
+    public function edit(Event $event)
     {
         //
-        
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\cr  $cr
+     * @param  \App\Models\Event  $event
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, cr $cr)
+    public function update(Request $request, Event $event)
     {
         //
-    
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\cr  $cr
+     * @param  \App\Models\Event  $event
      * @return \Illuminate\Http\Response
      */
-    public function destroy(cr $cr)
+    public function destroy(Event $event)
     {
         //
-        
     }
 }

@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\cr;
+use App\Models\Divisi;
+use App\Models\Team;
 use Illuminate\Http\Request;
 
 class TeamController extends Controller
@@ -15,7 +16,9 @@ class TeamController extends Controller
     public function index()
     {
         //
-        return view('team.index');
+        return view('team/index', [
+            'dataTeam' => Team::all()
+        ]);
     }
 
     /**
@@ -26,7 +29,9 @@ class TeamController extends Controller
     public function create()
     {
         //
-        return view('team.add');
+        return view('team/add', [
+            'dataDivisi' => Divisi::all()
+        ]);
     }
 
     /**
@@ -38,24 +43,30 @@ class TeamController extends Controller
     public function store(Request $request)
     {
         //
-        $validateData = $request->validate([
-            'nama' => 'required|max:255',
-            'divisi' => 'required',
+        $validatedData = $request->validate([
+            'nama' => 'required',
+            'id_divisi' => 'required',
             'email' => 'required',
-            'no_handphone' => 'required',
-            'foto_team' => 'required',
+            'no_telp' => 'required',
+            'foto_team' => 'image|file|max:1024',
         ]);
 
-        return redirect('team')->with('succes', 'Data Team Berhasil Disimpan');
+        if ($request->file('foto_team')) {
+            $validatedData['foto_team'] = $request->file('foto_team')->store('team-images');
+        }
+
+        Team::create($validatedData);
+
+        return redirect('team')->with('success', 'Data team berhasil ditambahkan');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\cr  $cr
+     * @param  \App\Models\Team  $team
      * @return \Illuminate\Http\Response
      */
-    public function show(cr $cr)
+    public function show(Team $team)
     {
         //
     }
@@ -63,23 +74,22 @@ class TeamController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\cr  $cr
+     * @param  \App\Models\Team  $team
      * @return \Illuminate\Http\Response
      */
-    public function edit(cr $cr)
+    public function edit(Team $team)
     {
         //
-        return view('team.edit');
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\cr  $cr
+     * @param  \App\Models\Team  $team
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, cr $cr)
+    public function update(Request $request, Team $team)
     {
         //
     }
@@ -87,10 +97,10 @@ class TeamController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\cr  $cr
+     * @param  \App\Models\Team  $team
      * @return \Illuminate\Http\Response
      */
-    public function destroy(cr $cr)
+    public function destroy(Team $team)
     {
         //
     }
