@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DivisiController;
+use App\Http\Controllers\PropertyController;
 use App\Http\Controllers\TeamController;
 use Illuminate\Support\Facades\Route;
 
@@ -41,6 +42,13 @@ Route::middleware(['auth'])->group(function () {
     Route::get('divisi', [DivisiController::class, 'index'])->name('divisi.index');
     Route::get('divisi/create', [DivisiController::class, 'create'])->name('divisi.create');
     Route::post('sendDivisi', [DivisiController::class, 'store'])->name('divisi.store');
+
+
+
+    //property
+    Route::get('property', [PropertyController::class, 'index'])->name('property.index');
+    Route::get('property/create', [PropertyController::class, 'create'])->name('property.create');
+    Route::post('sendProperty', [PropertyController::class, 'store'])->name('property.store');
 });
 
 

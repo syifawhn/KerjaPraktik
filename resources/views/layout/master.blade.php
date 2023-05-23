@@ -63,7 +63,8 @@
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
                         data-accordion="false">
                         <li class="nav-item">
-                            <a href="{{ route('dashboard.index') }}" class="nav-link">
+                            <a href="{{ route('dashboard.index') }}"
+                                class="nav-link {{ request()->is('dashboard*') ? 'active' : '' }}">
                                 <i class="nav-icon fas fa-tachometer-alt"></i>
                                 <p>
                                     Dashboard
@@ -79,7 +80,8 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="property" class="nav-link">
+                            <a href="{{ route('property.index') }}"
+                                class="nav-link {{ request()->is('property*') ? 'active' : '' }}">
                                 <i class="nav-icon fas fa-tachometer-alt"></i>
                                 <p>
                                     Property
@@ -87,7 +89,8 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ route('team.index') }}" class="nav-link">
+                            <a href="{{ route('team.index') }}"
+                                class="nav-link {{ request()->is('team*') ? 'active' : '' }}">
                                 <i class="nav-icon fas fa-tachometer-alt"></i>
                                 <p>
                                     Team
@@ -95,7 +98,8 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ route('divisi.index') }}" class="nav-link">
+                            <a href="{{ route('divisi.index') }}"
+                                class="nav-link {{ request()->is('divisi*') ? 'active' : '' }}">
                                 <i class="nav-icon fas fa-tachometer-alt"></i>
                                 <p>
                                     Divisi

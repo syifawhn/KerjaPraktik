@@ -15,6 +15,10 @@ class PropertyController extends Controller
     public function index()
     {
         //
+        return view('property.index', [
+            'properties' => Property::all()
+
+        ]);
     }
 
     /**
@@ -25,6 +29,7 @@ class PropertyController extends Controller
     public function create()
     {
         //
+        return view('property.add');
     }
 
     /**
@@ -36,6 +41,19 @@ class PropertyController extends Controller
     public function store(Request $request)
     {
         //
+        $validatedData = $request->validate([
+            'nama_property' => 'required',
+            'jumlah_property' => 'required',
+            'foto_property' => 'image|file|max:1024',
+        ]);
+
+        if ($request->file('foto_property')) {
+            $validatedData['foto_property'] = $request->file('foto_property')->store('property-images');
+        }
+
+        Property::create($validatedData);
+
+        return redirect('property')->with('success', 'Data property berhasil ditambahkan');
     }
 
     /**
