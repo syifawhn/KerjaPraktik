@@ -3,7 +3,7 @@
 @section('content')
     <div class="card">
         <div class="card-header">
-            <h3 class="card-title"> <a href="{{ route('divisi.create') }}" class="btn btn-primary">Tambah</a></h3>
+            <h3 class="card-title"> <a href="{{ route('divisi.create') }}" class="btn btn-primary">Tambah Divisi</a></h3>
         </div>
         <div class="card-body">
             <table id="example1" class="table table-bordered table-striped">
@@ -21,7 +21,17 @@
                             <td>{{ $item->nama_divisi }}</td>
                             <td>
                                 <a href="/divisi/edit/{{ $item->id }}" class="btn btn-warning">Edit</a>
-                                <a href="" class="btn btn-danger">Delete</a>
+                                @if (isset($delete))
+                                    {{-- Tampilkan data delete --}}
+                                    <a href="/delete/{{ $item->id }}" class="btn btn-danger">Delete</a>
+                                @else
+                                    {{-- Tampilkan pesan data berhasil dihapus --}}
+                                    <p>Data berhasil dihapus</p>
+                                @endif
+
+                                {{-- <a href="/delete/{{ $item->id }}" class="btn btn-danger">Delete</a> --}}
+
+
                             </td>
                         </tr>
                     @endforeach
