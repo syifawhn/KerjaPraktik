@@ -14,8 +14,8 @@
                         <th scope="col">Aksi</th>
                     </tr>
                 </thead>
-                @foreach ($data as $item)
-                    <tbody>
+                <tbody>
+                    @foreach ($data as $item)
                         <tr>
                             <td>{{ $loop->iteration }}</td>
                             <td>{{ $item->nama_divisi }}</td>
@@ -24,8 +24,8 @@
                                 <a href="" class="btn btn-danger">Delete</a>
                             </td>
                         </tr>
-                    </tbody>
-                @endforeach
+                    @endforeach
+                </tbody>
             </table>
         </div>
     </div>

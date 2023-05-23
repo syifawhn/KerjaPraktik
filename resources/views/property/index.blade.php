@@ -16,8 +16,8 @@
                         <th scope="col">Aksi</th>
                     </tr>
                 </thead>
-                @foreach ($properties as $item)
-                    <tbody>
+                <tbody>
+                    @foreach ($properties as $item)
                         <tr>
                             <td>{{ $loop->iteration }}</td>
                             <td>{{ $item->nama_property }}</td>
@@ -30,8 +30,8 @@
                                 <a href="" class="btn btn-danger">Delete</a>
                             </td>
                         </tr>
-                    </tbody>
-                @endforeach
+                    @endforeach
+                </tbody>
             </table>
         </div>
     </div>

@@ -33,26 +33,27 @@
                     <label for="" class="col-sm-2 col-form-label">Property</label>
                     <div class="col-sm-10">
                         <select class="form-control select2" id="propertySelect" onchange="loadPropertyTable()"
-                            name="property[]">
+                            name="property[]" multiple>
                             <option value="">Pilih Property</option>
                             @foreach ($dataProperti as $item)
                                 <option value="{{ $item->id }}">{{ $item->nama_property }}</option>
                             @endforeach
                         </select>
-                        <div id="propertyTableContainer"></div>
+                        {{-- <div id="propertyTableContainer"></div> --}}
                     </div>
                 </div>
 
                 <div class="row mb-3">
                     <label for="" class="col-sm-2 col-form-label">Divisi</label>
                     <div class="col-sm-10">
-                        <select class="form-control select2" id="teamSelect" onchange="loadTeamTable()" name="divisi[]">
+                        <select class="form-control select2" id="teamSelect" onchange="loadTeamTable()" name="divisi[]"
+                            multiple>
                             <option value="">Pilih Divisi</option>
                             @foreach ($dataDivisi as $item)
                                 <option value="{{ $item->id }}">{{ $item->nama_divisi }}</option>
                             @endforeach
                         </select>
-                        <div id="teamTableContainer"></div>
+                        {{-- <div id="teamTableContainer"></div> --}}
                     </div>
                 </div>
                 {{-- <div class="row mb-3">
