@@ -80,6 +80,10 @@ class TeamController extends Controller
     public function edit(Team $team)
     {
         //
+        return view('team/edit', [
+            'team' => $team,
+            'dataDivisi' => Divisi::all()
+        ]);
     }
 
     /**
@@ -92,6 +96,21 @@ class TeamController extends Controller
     public function update(Request $request, Team $team)
     {
         //
+        $validatedData = $request->validate([
+            'nama' => 'required',
+            'id_divisi' => 'required',
+            'email' => 'required',
+            'no_telp' => 'required',
+            'foto_team' => 'image|file|max:1024',
+        ]);
+
+        if ($request->file('foto_team')) {
+            $validatedData['foto_team'] = $request->file('foto_team')->store('team-images');
+        }
+
+        Team::where('id', $team->id)->update($validatedData);
+
+        return redirect('team')->with('success', 'Data team berhasil ditambahkan');
     }
 
     /**

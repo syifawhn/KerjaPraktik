@@ -23,6 +23,6 @@
 
         </div>
 
-        <button type="simpan" class="btn btn-primary">Simpan</button>
+        <button type="submit" class="btn btn-primary">Simpan</button>
     </form>
 @endsection

@@ -69,6 +69,9 @@ class DivisiController extends Controller
     public function edit(Divisi $divisi)
     {
         //
+       return view('divisi/edit', [
+           'divisi' => $divisi
+       ]);
     }
 
     /**
@@ -81,6 +84,13 @@ class DivisiController extends Controller
     public function update(Request $request, Divisi $divisi)
     {
         //
+        $validatedData = $request->validate([
+            'nama_divisi' => 'required',
+        ]);
+
+        Divisi::where('id', $divisi->id)->update($validatedData);
+
+        return redirect('divisi')->with('success', 'Divisi berhasil ditambahkan');
     }
 
     /**

@@ -13,11 +13,28 @@
                         <th scope="col">Nama Penyelenggara</th>
                         <th scope="col">Nama Event</th>
                         <th scope="col">Jadwal Event</th>
-                        <th scope="col">Alamat Event</th>
+                        {{-- <th scope="col">Alamat Event</th> --}}
                         <th scope="col">Status Pembayaran</th>
                         <th scope="col">Aksi</th>
                     </tr>
                 </thead>
+                <tbody>
+                    @foreach ($dataEvent as $item)
+                        <tr>
+                            <td>{{ $loop->iteration }}</td>
+                            <td>{{ $item->penyelenggara }}</td>
+                            <td>{{ $item->nama_event }}</td>
+                            <td>{{ $item->jadwal_event }}</td>
+                            <td></td>
+                            <td>
+                                <a href="" class="btn btn-warning">View</a>
+                                <a href="" class="btn btn-warning">Edit</a>
+                                <a href="" class="btn btn-danger">Delete</a>
+                            </td>
+
+                        </tr>
+                    @endforeach
+                </tbody>
             </table>
         </div>
     </div>

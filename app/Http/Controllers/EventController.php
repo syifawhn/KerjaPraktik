@@ -19,7 +19,9 @@ class EventController extends Controller
     public function index()
     {
         //
-        return view('event/index');
+        return view('event/index', [
+            'dataEvent' => Event::all()
+        ]);
     }
 
     /**
@@ -90,6 +92,9 @@ class EventController extends Controller
     public function show(Event $event)
     {
         //
+        return view('event/view', [
+            'event' => $event
+        ]);
     }
 
     /**
@@ -101,6 +106,9 @@ class EventController extends Controller
     public function edit(Event $event)
     {
         //
+        return view('event/edit', [
+            'event' => $event
+        ]);
     }
 
     /**
@@ -113,6 +121,13 @@ class EventController extends Controller
     public function update(Request $request, Event $event)
     {
         //
+        $validatedData = $request->validate([
+            'nama_event' => 'required',
+        ]);
+
+        event::where('id', $event->id)->update($validatedData);
+
+        return redirect('event')->with('success', 'event berhasil ditambahkan');
     }
 
     /**

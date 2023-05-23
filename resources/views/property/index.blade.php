@@ -26,7 +26,7 @@
                                 <img src="{{ asset('storage/' . $item->foto_property) }}" alt="" width="100px">
                             </td>
                             <td>
-                                <a href="" class="btn btn-warning">Edit</a>
+                                <a href="/property/edit/{{ $item->id }}" class="btn btn-warning">Edit</a>
                                 <a href="" class="btn btn-danger">Delete</a>
                             </td>
                         </tr>

@@ -35,6 +35,9 @@ Route::middleware(['auth'])->group(function () {
     Route::get('team', [TeamController::class, 'index'])->name('team.index');
     Route::get('team/create', [TeamController::class, 'create'])->name('team.create');
     Route::post('sendTeam', [TeamController::class, 'store'])->name('team.store');
+    Route::get('team/edit/{team}', [TeamController::class, 'edit'])->name('team.edit');
+    Route::patch('team/update/{team}', [TeamController::class, 'update'])->name('team.update');
+
 
 
 
@@ -43,12 +46,16 @@ Route::middleware(['auth'])->group(function () {
     Route::get('divisi', [DivisiController::class, 'index'])->name('divisi.index');
     Route::get('divisi/create', [DivisiController::class, 'create'])->name('divisi.create');
     Route::post('sendDivisi', [DivisiController::class, 'store'])->name('divisi.store');
+    Route::get('divisi/edit/{divisi}', [DivisiController::class, 'edit'])->name('divisi.edit');
+    Route::patch('divisi/update/{divisi}', [DivisiController::class, 'update'])->name('divisi.update');
 
 
 
     //property
     Route::get('property', [PropertyController::class, 'index'])->name('property.index');
     Route::get('property/create', [PropertyController::class, 'create'])->name('property.create');
+    Route::get('property/edit/{property}', [PropertyController::class, 'edit'])->name('property.edit');
+    Route::get('property/update/{property}', [PropertyController::class, 'update'])->name('property.update');
     Route::post('sendProperty', [PropertyController::class, 'store'])->name('property.store');
 
 
