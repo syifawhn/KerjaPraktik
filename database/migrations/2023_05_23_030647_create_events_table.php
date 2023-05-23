@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('penyelenggara');
             $table->string('nama_event');
-            $table->string('jadwal_event');
+            $table->date('jadwal_event');
             $table->string('alamat_event');
             $table->integer('harga');
             $table->integer('dp');

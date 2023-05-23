@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DivisiController;
+use App\Http\Controllers\EventController;
 use App\Http\Controllers\PropertyController;
 use App\Http\Controllers\TeamController;
 use Illuminate\Support\Facades\Route;
@@ -49,6 +50,12 @@ Route::middleware(['auth'])->group(function () {
     Route::get('property', [PropertyController::class, 'index'])->name('property.index');
     Route::get('property/create', [PropertyController::class, 'create'])->name('property.create');
     Route::post('sendProperty', [PropertyController::class, 'store'])->name('property.store');
+
+
+    //event
+    Route::get('event', [EventController::class, 'index'])->name('event.index');
+    Route::get('event/create', [EventController::class, 'create'])->name('event.create');
+    Route::post('sendEvent', [EventController::class, 'store'])->name('event.store');
 });
 
 

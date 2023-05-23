@@ -72,7 +72,8 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="event" class="nav-link">
+                            <a href="{{ route('event.index') }}"
+                                class="nav-link {{ request()->is('event*') ? 'active' : '' }}">
                                 <i class="nav-icon fas fa-tachometer-alt"></i>
                                 <p>
                                     Event
