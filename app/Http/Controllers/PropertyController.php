@@ -91,6 +91,19 @@ class PropertyController extends Controller
     public function update(Request $request, Property $property)
     {
         //
+        $validatedData = $request->validate([
+            'nama_property' => 'required',
+            'jumlah_property' => 'required',
+            'foto_property' => 'image|file|max:1024',
+        ]);
+
+        if ($request->file('foto_property')) {
+            $validatedData['foto_property'] = $request->file('foto_property')->store('property-images');
+        }
+
+        Property::where('id', $property->id)->update($validatedData);
+
+        return redirect('property')->with('success', 'Data property berhasil ditambahkan');
     }
 
     /**
@@ -102,5 +115,17 @@ class PropertyController extends Controller
     public function destroy(Property $property)
     {
         //
+        // $data = Property::find($id);
+        // $data->delete();
+        // return redirect('property')->with('success', 'Property berhasil dihapus!');
     }
+
+    public function delete($id) {
+        $data = Property::find($id);
+        $data->delete();
+        
+        return redirect('property')->with('success', 'Property berhasil dihapus!');
+    }
+
+
 }

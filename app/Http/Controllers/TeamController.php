@@ -123,4 +123,11 @@ class TeamController extends Controller
     {
         //
     }
+
+    public function delete($id) {
+        $data = Team::find($id);
+        $data->delete();
+
+        return redirect('team')->with('success', 'Team berhasil dihapus!');
+    }
 }

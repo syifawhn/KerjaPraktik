@@ -92,9 +92,19 @@ class EventController extends Controller
     public function show(Event $event)
     {
         //
-        return view('event/view', [
-            'event' => $event
+        $request->validate([
+            'penyelenggara' => 'required',
+            'nama_event' => 'required',
+            'jadwal_event' => 'required',
+            'alamat_event' => 'required',
+            'harga' => 'required',
+            'dp' => 'required',
+            'sisa' => 'required',
         ]);
+        Event::show($request);
+        // return view('event/view', [
+        //     'event' => $event
+        // ]);
     }
 
     /**
@@ -140,4 +150,6 @@ class EventController extends Controller
     {
         //
     }
+
+    
 }

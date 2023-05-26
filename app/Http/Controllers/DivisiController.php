@@ -105,7 +105,7 @@ class DivisiController extends Controller
     }
 
     public function delete($id) {
-        $data = divisi::find($id);
+        $data = Divisi::find($id);
         $data->delete();
 
         return redirect('divisi')->with('success', 'Divisi berhasil dihapus!');

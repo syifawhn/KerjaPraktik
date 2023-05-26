@@ -26,8 +26,8 @@ Route::get('/', function () {
 
 
 Route::middleware(['auth'])->group(function () {
-    //dashboard
-    Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard.index');
+    // //dashboard
+    // Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard.index');
 
     //team
     Route::get('team', [TeamController::class, 'index'])->name('team.index');
@@ -35,6 +35,8 @@ Route::middleware(['auth'])->group(function () {
     Route::post('sendTeam', [TeamController::class, 'store'])->name('team.store');
     Route::get('team/edit/{team}', [TeamController::class, 'edit'])->name('team.edit');
     Route::patch('team/update/{team}', [TeamController::class, 'update'])->name('team.update');
+    Route::get('/delete/{team}', [TeamController::class, 'delete'])->name('team.delete');
+    
 
     //divisi
     Route::get('divisi', [DivisiController::class, 'index'])->name('divisi.index');
@@ -50,13 +52,17 @@ Route::middleware(['auth'])->group(function () {
     Route::get('property/edit/{property}', [PropertyController::class, 'edit'])->name('property.edit');
     Route::get('property/update/{property}', [PropertyController::class, 'update'])->name('property.update');
     Route::post('sendProperty', [PropertyController::class, 'store'])->name('property.store');
+    Route::get('/delete/{property}', [PropertyController::class, 'delete'])->name('property.delete');
+
 
     //event
     Route::get('event', [EventController::class, 'index'])->name('event.index');
     Route::get('event/create', [EventController::class, 'create'])->name('event.create');
-    Route::get('event/edit/{event}', [eventController::class, 'edit'])->name('event.edit');
-    Route::get('event/update/{event}', [eventController::class, 'update'])->name('event.update');
+    Route::get('event/edit/{event}', [EventController::class, 'edit'])->name('event.edit');
+    Route::get('event/update/{event}', [EventController::class, 'update'])->name('event.update');
+    Route::get('event/view/{event}', [ViewController::class, 'view'])->name('event.view');
     Route::post('sendEvent', [EventController::class, 'store'])->name('event.store');
+    Route::get('/delete/{event}', [EventController::class, 'delete'])->name('event.delete');
 });
 
 require __DIR__ . '/auth.php';

@@ -27,9 +27,10 @@
                             <td>{{ $item->jadwal_event }}</td>
                             <td></td>
                             <td>
-                                <a href="" class="btn btn-warning">View</a>
-                                <a href="" class="btn btn-warning">Edit</a>
-                                <a href="" class="btn btn-danger">Delete</a>
+
+                                <a href="/event/view/{{ $item->id }}" class="btn btn-warning">View</a>
+                                <a href="/event/edit/{{ $item->id }}" class="btn btn-warning">Edit</a>
+                                <a href="/delete/{{ $item->id }}" class="btn btn-danger">Delete</a>
                             </td>
 
                         </tr>

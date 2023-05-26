@@ -18,27 +18,29 @@
                     </tr>
                 </thead>
                 @foreach ($dataTeam as $item)
-                    <tr>
-                        <td>
-                            {{ $loop->iteration }}
-                        </td>
-                        <td>
-                            {{ $item->nama }}
-                        </td>
-                        <td>
-                            {{ $item->divisi->nama_divisi }}
-                        </td>
-                        <td>
-                            {{ $item->email }}
-                        </td>
-                        <td>
-                            {{ $item->no_telp }}
-                        </td>
-                        <td>
-                            <a href="/team/edit/{{ $item->id }}" class="btn btn-warning">Edit</a>
-                            <a href="" class="btn btn-danger">Delete</a>
-                        </td>
-                    </tr>
+                    <tbody>
+                        <tr>
+                            <td>
+                                {{ $loop->iteration }}
+                            </td>
+                            <td>
+                                {{ $item->nama }}
+                            </td>
+                            <td>
+                                {{ $item->divisi->nama_divisi }}
+                            </td>
+                            <td>
+                                {{ $item->email }}
+                            </td>
+                            <td>
+                                {{ $item->no_telp }}
+                            </td>
+                            <td>
+                                <a href="/team/edit/{{ $item->id }}" class="btn btn-warning">Edit</a>
+                                <a href="/delete/{{ $item->id }}" class="btn btn-danger">Delete</a>
+                            </td>
+                        </tr>
+                    </tbody>
                 @endforeach
             </table>
         </div>

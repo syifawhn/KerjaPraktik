@@ -21,17 +21,10 @@
                             <td>{{ $item->nama_divisi }}</td>
                             <td>
                                 <a href="/divisi/edit/{{ $item->id }}" class="btn btn-warning">Edit</a>
-                                @if (isset($delete))
-                                    {{-- Tampilkan data delete --}}
-                                    <a href="/delete/{{ $item->id }}" class="btn btn-danger">Delete</a>
-                                @else
-                                    {{-- Tampilkan pesan data berhasil dihapus --}}
-                                    <p>Data berhasil dihapus</p>
-                                @endif
-
-                                {{-- <a href="/delete/{{ $item->id }}" class="btn btn-danger">Delete</a> --}}
-
-
+                                <a href="/delete/{{ $item->id }}" class="btn btn-danger">Delete</a>
+                                {{-- <div class="alert alert-secondary" role="alert">
+                                    Divisi Berhasil Dihapus!
+                                </div> --}}
                             </td>
                         </tr>
                     @endforeach
