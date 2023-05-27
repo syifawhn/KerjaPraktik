@@ -33,7 +33,7 @@ class EventController extends Controller
     {
         //
         return view('event/add', [
-            'dataDivisi' => Divisi::all(),
+            'dataTeam' => Team::all(),
             'dataProperti' => Property::all(),
         ]);
     }
@@ -56,6 +56,8 @@ class EventController extends Controller
             'dp' => 'required',
             'sisa' => 'required',
         ]);
+
+        return redirect('event')->with('success', 'Data Event Berhasil Disimpan');
 
         // Simpan data event
         $event = new Event();
@@ -80,7 +82,7 @@ class EventController extends Controller
         }
 
 
-        return redirect('event')->with('success', 'Event berhasil disimpan.');
+        // return redirect('event')->with('success', 'Data');
     }
 
     /**
@@ -102,9 +104,7 @@ class EventController extends Controller
             'sisa' => 'required',
         ]);
         Event::show($request);
-        // return view('event/view', [
-        //     'event' => $event
-        // ]);
+        return view('event/show', compact('event'));
     }
 
     /**
@@ -149,6 +149,12 @@ class EventController extends Controller
     public function destroy(Event $event)
     {
         //
+    }
+
+    public function delete3($id) {
+        $data = Event::find($id);
+        $data->delete();
+        return redirect()->route('event.index')->with('success', 'Event berhasil dihapus!');
     }
 
     

@@ -19,8 +19,8 @@ return new class extends Migration
             $table->foreign('id_event')->references('id')->on('events')->onDelete('cascade')->onUpdate('cascade');
             $table->unsignedBigInteger('id_property');
             $table->foreign('id_property')->references('id')->on('properties')->onDelete('cascade')->onUpdate('cascade');
-            $table->unsignedBigInteger('id_divisi');
-            $table->foreign('id_divisi')->references('id')->on('divisis')->onDelete('cascade')->onUpdate('cascade');
+            $table->unsignedBigInteger('id_team');
+            $table->foreign('id_team')->references('id')->on('teams')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });
     }

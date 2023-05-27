@@ -47,13 +47,14 @@ class PropertyController extends Controller
             'foto_property' => 'image|file|max:1024',
         ]);
 
+        return redirect('property')->with('success', 'Data property berhasil ditambahkan');
+
         if ($request->file('foto_property')) {
             $validatedData['foto_property'] = $request->file('foto_property')->store('property-images');
         }
 
         Property::create($validatedData);
 
-        return redirect('property')->with('success', 'Data property berhasil ditambahkan');
     }
 
     /**
@@ -120,11 +121,10 @@ class PropertyController extends Controller
         // return redirect('property')->with('success', 'Property berhasil dihapus!');
     }
 
-    public function delete($id) {
+    public function delete1($id) {
         $data = Property::find($id);
         $data->delete();
-        
-        return redirect('property')->with('success', 'Property berhasil dihapus!');
+        return redirect()->route('property.index')->with('success', 'Property berhasil dihapus!');
     }
 
 

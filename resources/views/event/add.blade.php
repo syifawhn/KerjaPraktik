@@ -44,13 +44,13 @@
                 </div>
 
                 <div class="row mb-3">
-                    <label for="" class="col-sm-2 col-form-label">Divisi</label>
+                    <label for="" class="col-sm-2 col-form-label">Team</label>
                     <div class="col-sm-10">
-                        <select class="form-control select2" id="teamSelect" onchange="loadTeamTable()" name="divisi[]"
+                        <select class="form-control select2" id="teamSelect" onchange="loadTeamTable()" name="team[]"
                             multiple>
-                            <option value="">Pilih Divisi</option>
-                            @foreach ($dataDivisi as $item)
-                                <option value="{{ $item->id }}">{{ $item->nama_divisi }}</option>
+                            <option value="">Pilih Team</option>
+                            @foreach ($dataTeam as $item)
+                                <option value="{{ $item->id }}">{{ $item->nama }}</option>
                             @endforeach
                         </select>
                         {{-- <div id="teamTableContainer"></div> --}}

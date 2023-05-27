@@ -60,7 +60,7 @@
         </div>
         <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Foto Event</label>
-            <input type="image" class="form-control" name="Foto Event" id="exampleInputEmail1"
+            <input type="image" class="form-control" name="Foto Event" id="exampleInputEmail1" method=POST
                 aria-describedby="emailHelp" value="{{ old('fotohp', $event->fotohp) }}">
 
         </div>

@@ -44,9 +44,11 @@ class DivisiController extends Controller
             'nama_divisi' => 'required',
         ]);
 
+        return redirect('divisi')->with('success', 'Data Divisi Berhasil Disimpan');
+
         Divisi::create($validatedData);
 
-        return redirect('divisi')->with('success', 'Divisi berhasil ditambahkan');
+        // return redirect('divisi')->with('success', 'Divisi berhasil ditambahkan');
     }
 
     /**
@@ -104,10 +106,10 @@ class DivisiController extends Controller
         //
     }
 
-    public function delete($id) {
+    public function delete2($id) {
         $data = Divisi::find($id);
         $data->delete();
 
-        return redirect('divisi')->with('success', 'Divisi berhasil dihapus!');
+        return redirect()->route('divisi.index')->with('success', 'Divisi berhasil dihapus!');
     }
 }

@@ -28,9 +28,9 @@
                             <td></td>
                             <td>
 
-                                <a href="/event/view/{{ $item->id }}" class="btn btn-warning">View</a>
+                                <a href="/event/show/{{ $item->id }}" class="btn btn-info">Show</a>
                                 <a href="/event/edit/{{ $item->id }}" class="btn btn-warning">Edit</a>
-                                <a href="/delete/{{ $item->id }}" class="btn btn-danger">Delete</a>
+                                <a href="/delete3/{{ $item->id }}" class="btn btn-danger">Delete</a>
                             </td>
 
                         </tr>
@@ -39,4 +39,5 @@
             </table>
         </div>
     </div>
+    <div>@include('sweetalert::alert')</div>
 @endsection
