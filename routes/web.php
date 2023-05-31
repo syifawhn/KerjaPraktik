@@ -63,7 +63,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('event/view/{event}', [ViewController::class, 'view'])->name('event.view');
     Route::post('sendEvent', [EventController::class, 'store'])->name('event.store');
     Route::get('/delete3/{event}', [EventController::class, 'delete3'])->name('event.delete3');
-    Route::get('/show/{event}', [EventController::class, 'show'])->name('event.show');
+    Route::get('event/show/{event}', [EventController::class, 'show'])->name('event.show');
     
 });
 

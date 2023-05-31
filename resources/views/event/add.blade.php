@@ -57,13 +57,13 @@
                     </div>
                 </div>
                 {{-- <div class="row mb-3">
-                    <label for="" class="col-sm-2 col-form-label">Foto</label>
+                    <label for="" class="col-sm-2 col-form-label">Foto Event</label>
                     <div class="col-sm-10">
-                        <input type="file" class="form-control" name="foto">
+                        <input type="file" class="form-control" id="" name="foto">
                     </div>
                 </div> --}}
                 <div class="row mb-3">
-                    <label for="" class="col-sm-2 col-form-label">Harga</label>
+                    <label for="" class="col-sm-2 col-form-label">Biaya</label>
                     <div class="col-sm-10">
                         <input type="number" class="form-control" name="harga">
                     </div>
@@ -74,12 +74,12 @@
                         <input type="number" class="form-control" name="dp">
                     </div>
                 </div>
-                <div class="row mb-3">
+                {{-- <div class="row mb-3">
                     <label for="" class="col-sm-2 col-form-label">Sisa</label>
                     <div class="col-sm-10">
                         <input type="number" class="form-control" name="sisa">
                     </div>
-                </div>
+                </div> --}}
                 <button type="submit" class="btn btn-primary">Simpan</button>
                 <button type="reset" class="btn btn-secondary">Batal</button>
             </form>

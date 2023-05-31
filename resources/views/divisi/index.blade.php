@@ -21,10 +21,12 @@
                             <td>{{ $item->nama_divisi }}</td>
                             <td>
                                 <a href="/divisi/edit/{{ $item->id }}" class="btn btn-warning">Edit</a>
-                                <a href="/delete2/{{ $item->id }}" class="btn btn-danger">Delete</a>
+                                {{-- <a href="/delete2/{{ $item->id }}" class="btn btn-danger">Delete</a> --}}
                                 {{-- <div class="alert alert-secondary" role="alert">
                                     Divisi Berhasil Dihapus!
                                 </div> --}}
+                                <a onclick="return  confirm('Yakin ingin menghapus data?')"
+                                    href="/divisi/destroy/{{ $item->id }}" class="btn btn-danger">Delete</a>
                             </td>
                         </tr>
                     @endforeach

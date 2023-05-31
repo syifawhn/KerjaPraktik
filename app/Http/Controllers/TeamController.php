@@ -56,9 +56,10 @@ class TeamController extends Controller
         if ($request->file('foto_team')) {
             $validatedData['foto_team'] = $request->file('foto_team')->store('team-images');
         }
-        return redirect('team')->with('success', 'Data Divisi Berhasil Disimpan');
 
         Team::create($validatedData);
+        
+        return redirect('team')->with('success', 'Data Divisi Berhasil Disimpan');
 
     }
 

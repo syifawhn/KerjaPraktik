@@ -14,8 +14,8 @@
                         <th scope="col">Nama Event</th>
                         <th scope="col">Jadwal Event</th>
                         {{-- <th scope="col">Alamat Event</th> --}}
-                        <th scope="col">Status Pembayaran</th>
-                        <th scope="col">Aksi</th>
+                        {{-- <th scope="col">Aksi</th> --}}
+                        {{-- <th scope="col">Status Pembayaran</th> --}}
                     </tr>
                 </thead>
                 <tbody>
@@ -28,9 +28,11 @@
                             <td></td>
                             <td>
 
-                                <a href="/event/show/{{ $item->id }}" class="btn btn-info">Show</a>
+                                <a href="/event/show/{{ $item->id }}" class="btn btn-info">View</a>
                                 <a href="/event/edit/{{ $item->id }}" class="btn btn-warning">Edit</a>
-                                <a href="/delete3/{{ $item->id }}" class="btn btn-danger">Delete</a>
+                                {{-- <a href="/delete3/{{ $item->id }}" class="btn btn-danger">Delete</a> --}}
+                                <a onclick="return  confirm('Yakin ingin menghapus data?')"
+                                    href="/event/destroy/{{ $item->id }}" class="btn btn-danger">Delete</a>
                             </td>
 
                         </tr>

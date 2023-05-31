@@ -37,7 +37,9 @@
                             </td>
                             <td>
                                 <a href="/team/edit/{{ $item->id }}" class="btn btn-warning">Edit</a>
-                                <a href="/delete/{{ $item->id }}" class="btn btn-danger">Delete</a>
+                                {{-- <a href="/delete/{{ $item->id }}" class="btn btn-danger">Delete</a> --}}
+                                <a onclick="return  confirm('Yakin ingin menghapus data?')"
+                                    href="/team/destroy/{{ $item->id }}" class="btn btn-danger">Delete</a>
                             </td>
                         </tr>
                     </tbody>

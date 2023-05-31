@@ -27,7 +27,8 @@
                             </td>
                             <td>
                                 <a href="/property/edit/{{ $item->id }}" class="btn btn-warning">Edit</a>
-                                <a href="/delete1/{{ $item->id }}" class="btn btn-danger">Delete</a>
+                                <a onclick="return  confirm('Yakin ingin menghapus data?')"
+                                    href="/property/destroy/{{ $item->id }}" class="btn btn-danger">Delete</a>
                             </td>
                         </tr>
                     @endforeach

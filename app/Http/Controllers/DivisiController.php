@@ -27,7 +27,7 @@ class DivisiController extends Controller
      */
     public function create()
     {
-        //
+      //
         return view('divisi/create');
     }
 
@@ -44,9 +44,10 @@ class DivisiController extends Controller
             'nama_divisi' => 'required',
         ]);
 
+        Divisi::create($validatedData);
+
         return redirect('divisi')->with('success', 'Data Divisi Berhasil Disimpan');
 
-        Divisi::create($validatedData);
 
         // return redirect('divisi')->with('success', 'Divisi berhasil ditambahkan');
     }

@@ -41,7 +41,7 @@
 
         </div>
         <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Harga</label>
+            <label for="exampleInputEmail1" class="form-label">Biaya</label>
             <input type="number" class="form-control" name="Harga" id="exampleInputEmail1" aria-describedby="emailHelp"
                 value="{{ old('harga', $event->harga) }}">
 
@@ -52,12 +52,12 @@
                 value="{{ old('dp', $event->dp) }}">
 
         </div>
-        <div class="mb-3">
+        {{-- <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Sisa</label>
             <input type="number" class="form-control" name="Sisa" id="exampleInputEmail1" aria-describedby="emailHelp"
                 value="{{ old('sisa', $event->sisa) }}">
 
-        </div>
+        </div> --}}
         <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Foto Event</label>
             <input type="image" class="form-control" name="Foto Event" id="exampleInputEmail1" method=POST

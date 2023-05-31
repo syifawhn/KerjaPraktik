@@ -57,7 +57,9 @@ class EventController extends Controller
             'sisa' => 'required',
         ]);
 
-        return redirect('event')->with('success', 'Data Event Berhasil Disimpan');
+        // Event::create($validatedData);
+
+        // return redirect('event')->with('success', 'Data Event Berhasil Disimpan');
 
         // Simpan data event
         $event = new Event();
@@ -67,7 +69,7 @@ class EventController extends Controller
         $event->alamat_event = $request->input('alamat_event');
         $event->harga = $request->input('harga');
         $event->dp = $request->input('dp');
-        $event->sisa = $request->input('sisa');
+        // $event->sisa = $request->input('sisa');
         $event->save();
 
         // Simpan data detail event
@@ -81,8 +83,10 @@ class EventController extends Controller
             }
         }
 
+        Event::create($request);
 
-        // return redirect('event')->with('success', 'Data');
+
+        return redirect('event')->with('success', 'Data Event Berhasil Disimpan');
     }
 
     /**
@@ -101,7 +105,8 @@ class EventController extends Controller
             'alamat_event' => 'required',
             'harga' => 'required',
             'dp' => 'required',
-            'sisa' => 'required',
+            // 'sisa' => 'required',
+            // 'status_pembayaran' => 'required'
         ]);
         Event::show($request);
         return view('event/show', compact('event'));
